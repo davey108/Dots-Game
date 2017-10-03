@@ -96,7 +96,7 @@ public class Dots implements DotsInterface{
            else{
              // set dot to not falling anymore
              fallingDot.setFalling();
-             this.isStuckStep();
+             return this.isStuckStep();
            }
          }
          else{
@@ -111,7 +111,7 @@ public class Dots implements DotsInterface{
            }
            else{
              fallingDot.setFalling();
-             this.isStuckStep();
+             return this.isStuckStep();
            }
          }
          else{
@@ -126,7 +126,7 @@ public class Dots implements DotsInterface{
           }
           else{
             fallingDot.setFalling();
-            this.isStuckStep();
+            return this.isStuckStep();
           }
          }
          else{
@@ -139,21 +139,21 @@ public class Dots implements DotsInterface{
   // that is giving this error
   catch (Exception e){
     fallingDot.setFalling();
-    this.isStuckStep();
+    return this.isStuckStep();
   }
  }
  
  /* Evaluate if this dot is still stuck after being call step() already
   * @return boolean value which say if this dot is stuck after called step()*/
   public boolean isStuckStep(){
-	  // isStuckCall is a condition to check if step()
+   // isStuckCall is a condition to check if step()
       // has already been called on this dead dot
-	  if(fallingDot.isStuckCall()){
-		  // reset the fallingDot because this one is done
-		  fallingDot = null;
-		  return false;
-	  }
-	  return true;
+   if(fallingDot.isStuckCall()){
+    // reset the fallingDot because this one is done
+    fallingDot = null;
+    return false;
+   }
+   return true;
   }
 
  
