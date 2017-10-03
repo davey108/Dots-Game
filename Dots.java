@@ -33,8 +33,7 @@ public class Dots implements DotsInterface{
  * board is not a square/rectangle
  */
  public Dots(File file) throws FileNotFoundException, InvalidBoardException{
-  Scanner readBoard = new Scanner(file);
-  
+  Scanner readBoard = new Scanner(file);  
   int height = 0;
   int tempW = 0;
   int previousWidth = 0;
@@ -95,16 +94,7 @@ public class Dots implements DotsInterface{
            else{
              // set dot to not falling anymore
              fallingDot.setFalling();
-             // isStuckCall is a condition to check if step()
-             // has already been called on this dead dot
-             if(fallingDot.isStuckCall()){
-               // reset the fallingDot because this one is done
-               fallingDot = null;
-               return false;
-             }
-             else{
-               return true;
-             }
+             this.isStuckStep();
            }
          }
          else{
@@ -119,13 +109,7 @@ public class Dots implements DotsInterface{
            }
            else{
              fallingDot.setFalling();
-             if(fallingDot.isStuckCall()){
-                fallingDot = null;
-               return false;              
-             }
-             else{
-               return true;
-             }
+             this.isStuckStep();
            }
          }
          else{
@@ -140,16 +124,7 @@ public class Dots implements DotsInterface{
           }
           else{
             fallingDot.setFalling();
-            if(fallingDot.isStuckCall()){
-              // we know this dot at this location is useless so reset
-              fallingDot = null;
-              return false;
-              
-              
-            }
-            else{
-              return true;
-            }
+            this.isStuckStep();
           }
          }
          else{
@@ -162,15 +137,22 @@ public class Dots implements DotsInterface{
   // that is giving this error
   catch (Exception e){
     fallingDot.setFalling();
-    if(fallingDot.isStuckCall()){
-      fallingDot = null;
-      return false;
-    }
-    else{
-      return true;
-    }
+    this.isStuckStep();
   }
  }
+ 
+ /* Evaluate if this dot is still stuck after being call step() already
+  * @return boolean value which say if this dot is stuck after called step()*/
+  public boolean isStuckStep(){
+	  // isStuckCall is a condition to check if step()
+      // has already been called on this dead dot
+	  if(fallingDot.isStuckCall()){
+		  // reset the fallingDot because this one is done
+		  fallingDot = null;
+		  return false;
+	  }
+	  return true;
+  }
 
  
  /**
