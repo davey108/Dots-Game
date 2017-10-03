@@ -1,5 +1,6 @@
 /*  This class tracks the ball during each
- * of its fall and update its position to the board*/
+ * of its fall and its status and update its 
+ * position to the board*/
 public class CoordTracker{
   // fields to keep track if a dot is falling
   // and if it has been called step() again
@@ -24,6 +25,7 @@ public class CoordTracker{
   public void setStuckCall(){
     this.stuckCall = true;
   }
+  /* Check if the ball is stuck */
   public boolean isStuckCall(){
     return this.stuckCall;
   }
