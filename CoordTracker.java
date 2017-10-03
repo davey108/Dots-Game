@@ -1,5 +1,5 @@
-// a class for tracking of the falling
-// dots location
+/*  This class tracks the ball during each
+ * of its fall and update its position to the board*/
 public class CoordTracker{
   // fields to keep track if a dot is falling
   // and if it has been called step() again

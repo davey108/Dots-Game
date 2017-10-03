@@ -1,3 +1,5 @@
+/* Test File to make some brand new boards and test the game 
+ * to assure the game is running correctly and the balls are falling as described */
 import java.io.*;
 import java.util.*;
 import org.junit.*;
