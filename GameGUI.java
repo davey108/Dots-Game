@@ -7,7 +7,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /**
- *  GUI for the Dots game for CS211 Summer 2016
+ *  GUI for the Dots game for CS211
  *  
  *  @author Katherine (Raven) Russell
  */

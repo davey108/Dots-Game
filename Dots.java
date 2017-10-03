@@ -1,3 +1,5 @@
+/* This class loads the board and handle all the game action
+ * It dictates how the ball will fall and how the game will run */
 import java.io.*;
 import java.util.*;
 public class Dots implements DotsInterface{

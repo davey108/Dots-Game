@@ -2,9 +2,7 @@ import java.io.FileNotFoundException;
 import java.io.File;
 
 /**
- *  Dots game interface for CS211 Summer 2016
- *  
- *  @author Your Name Here
+ *  Dots game interface for Dots.java
  */
 interface DotsInterface {
 	/**
